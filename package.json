@@ -1,0 +1,22 @@
+{
+  "name": "slide.md",
+  "version": "0.0.1",
+  "description": "a HTML5 presentation builder",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/thpoiani/slide.md"
+  },
+  "keywords": [
+    "html5",
+    "markdown",
+    "md",
+    "presentation",
+    "slide"
+  ],
+  "author": "Thiago Henrique Poiani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thpoiani/slide.md/issues"
+  },
+  "homepage": "https://github.com/thpoiani/slide.md"
+}
