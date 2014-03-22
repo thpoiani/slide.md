@@ -1,0 +1,28 @@
+{
+  "name": "slide.md",
+  "version": "0.0.1",
+  "homepage": "https://github.com/thpoiani/slide.md",
+  "authors": [
+    "Thiago Poiani <thpoiani@gmail.com>"
+  ],
+  "description": "a HTML5 presentation builder",
+  "keywords": [
+    "html5",
+    "markdown",
+    "md",
+    "presentation",
+    "slide"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.0",
+    "jquery": "~2.1.0"
+  }
+}

@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Thiago Poiani - developer  <thpoiani@gmail.com>
+
+# THANKS
+
+    Tiago Trojahn
+    André Valenti
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3

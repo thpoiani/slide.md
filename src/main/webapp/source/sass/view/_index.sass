@@ -1,0 +1,83 @@
+.row
+  @extend %width-100
+  @extend %position-rel
+  .center
+    @extend %text-align-center
+  .right
+    @extend %text-align-right
+  .content
+    @extend %margin-0-auto
+    @extend %width-content
+    &.header
+      height: 150px
+  .content-medium
+    @extend %margin-0-auto
+    @extend %width-50
+
+.button
+  @extend %text-align-center
+  @extend %display-inline-block
+  @extend %uppercase
+  @include border-radius-bottom(3px)
+  width: 100px
+  height: 30px
+  background-color: $cinza-claro
+  color: $branco
+  @include transition(background-color, 300ms, ease-out)
+  &:hover
+    background-color: $cinza-escuro
+  &.signup
+    background-color: $cinza-escuro
+
+.logo
+  @extend %position-rel
+  @extend %source-code-pro
+  color: $cinza-escuro
+  &::before
+    @extend %position-abs
+    content: '========'
+    bottom: -10px
+    line-height: 0
+
+.subtitle
+  @extend %position-rel
+  @extend %source-code-pro
+  padding: 0 0 0 40px
+  color: $cinza-escuro
+  &::before
+    @extend %position-abs
+    content: '##'
+    left: 0
+
+.border
+  @extend %border-bottom
+  @extend %border-top
+  margin: 20px 0 40px
+
+blockquote
+  @extend %border-left
+  @extend %text-align-left
+  color: $cinza-escuro
+  padding: 0 15px
+  margin: 15px 0
+
+.markdown
+  height: 300px
+  @extend %position-rel
+  div
+    @extend %width-50
+    height: 100%
+    @extend %float-left
+
+.presentations
+  ul
+    height: 300px
+    font-size: 0
+    li
+      @extend %display-inline-block
+      width: 20%
+      height: 100%
+
+footer
+  padding: 10px 0
+  @extend %text-align-center

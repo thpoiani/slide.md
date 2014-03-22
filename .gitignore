@@ -4,3 +4,13 @@
 *.jar
 *.war
 *.ear
+target/
+tmp/
+.settings/
+.classpath
+.project
+src/main/webapp/source/.sass-cache
+src/main/webapp/source/bower_components
+src/main/webapp/source/css
+src/main/webapp/source/node_modules
+

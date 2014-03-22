@@ -1,0 +1,12 @@
+﻿$fonts: 'source-code-pro', 'source-sans-pro'
+
+@each $font-face in $fonts
+  @font-face
+    font-family: $font-face
+    font-style: normal
+    font-weight: normal
+    src: url('../fonts/#{$font-face}.woff') format('woff')
+
+@each $font-face in $fonts
+  %#{$font-face}
+    font-family: '#{$font-face}'
