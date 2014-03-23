@@ -19,6 +19,11 @@ module.exports = function(grunt) {
       production: '../img/'
     },
 
+    fonts: {
+      development: './fonts/',
+      production: '../fonts/'
+    },
+
     normalize: './bower_components/normalize.css/normalize.css'
   }
 
@@ -40,7 +45,8 @@ module.exports = function(grunt) {
       production: [
         grunt.constants.css.production,
         grunt.constants.js.production,
-        grunt.constants.images.production
+        grunt.constants.images.production,
+        grunt.constants.fonts.production
       ]
     },
 
@@ -87,6 +93,16 @@ module.exports = function(grunt) {
             cwd: grunt.constants.images.development,
             src: ['*.*', "!.icons/"],
             dest: grunt.constants.images.production
+          }
+        ]
+      },
+      fonts: {
+        files: [
+          {
+            expand: true,
+            cwd: grunt.constants.fonts.development,
+            src: ['*'],
+            dest: grunt.constants.fonts.production
           }
         ]
       }
@@ -158,9 +174,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['compass:clean', 'compass:compile', 'normalize-concat']);
 
-  grunt.registerTask('development', ['clean', 'compass:clean', 'compass:compile', 'normalize-concat', 'copy:js', 'copy:css', 'copy:images']);
+  grunt.registerTask('development', ['clean', 'compass:clean', 'compass:compile', 'normalize-concat', 'copy']);
 
-  grunt.registerTask('production', ['clean', 'compass:clean', 'compass:compile', 'normalize-concat', 'uglify', 'cssmin', 'copy:images', 'imagemin']);
+  grunt.registerTask('production', ['clean', 'compass:clean', 'compass:compile', 'normalize-concat', 'uglify', 'cssmin', 'copy:images', 'imagemin', 'copy:fonts']);
 
   grunt.registerTask('sanitize', ['clean', 'compass:clean']);
 

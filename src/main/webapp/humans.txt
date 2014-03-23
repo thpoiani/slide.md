@@ -3,12 +3,12 @@
 
 # TEAM
 
-    Thiago Poiani - developer  <thpoiani@gmail.com>
+    Thiago Poiani <thpoiani@gmail.com>
 
 # THANKS
 
-    Tiago Trojahn
-    AndrÃ© Valenti
+    Tiago Trojahn <tiagotrojahn.ifsp@gmail.com>
+    André Valenti <awvalenti@gmail.com>
 
 # TECHNOLOGY COLOPHON
 
