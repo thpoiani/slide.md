@@ -1,3 +1,5 @@
+<content tag="controller">index</content>
+
 <section class="row border">
   <div class="content-medium center">
     <blockquote>

@@ -7,17 +7,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><decorator:title default="slide.md - a HTML5 presentation builder"/></title>
 
-<meta name="description" content="<decorator:getProperty property="meta.description" default="" />" />
-<meta name="keywords" content="<decorator:getProperty property="meta.keywords" default="" />" />
-<meta name="author" content="<decorator:getProperty property="meta.author" default="Thiago Poiani - thpoiani@gmail.com" />" />
-<meta name="robots" content="<decorator:getProperty property="meta.robots" default="index, follow" />" />
+<meta name="description" content="<decorator:getProperty property="page.description" default="" />" />
+<meta name="keywords" content="<decorator:getProperty property="page.keywords" default="" />" />
+<meta name="author" content="<decorator:getProperty property="page.author" default="Thiago Poiani - thpoiani@gmail.com" />" />
+<meta name="robots" content="<decorator:getProperty property="page.robots" default="index, follow" />" />
 
 <meta property="og:title" content="<decorator:title default="slide.md"/>" />
-<meta property="og:description" content="<decorator:getProperty property="meta.description" default="" />" />
-<meta property="og:url" content="<decorator:getProperty property="meta.url" default="" />" />
+<meta property="og:description" content="<decorator:getProperty property="page.description" default="" />" />
+<meta property="og:url" content="<decorator:getProperty property="page.url" default="" />" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="<decorator:getProperty property="meta.image" default="" />" />
-<meta property="og:site_name" content="<decorator:getProperty property="meta.site_name" default="slide.md" />" />
+<meta property="og:image" content="<decorator:getProperty property="page.image" default="" />" />
+<meta property="og:site_name" content="<decorator:getProperty property="page.site_name" default="slide.md" />" />
 
 <link rel="apple-touch-icon-precomposed" sizes="152x152" href="">
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
@@ -29,9 +29,9 @@
 <link rel="icon" sizes="32x32" href="">
 <link rel="shortcut icon" href="">
 
-<link rel="canonical" href="<decorator:getProperty property="meta.url" default="" />" />
+<link rel="canonical" href="<decorator:getProperty property="page.url" default="" />" />
 
-<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/<decorator:getProperty property="page.controller" default="index" />.css">
 
 <script>
 //     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -69,7 +69,7 @@
 </header>
 
   <decorator:body/>
-  
+
 <footer class="row center">
   <p>
     <strong><a href="https://github.com/thpoiani" target="_blank" title="Thiago Poiani">Thiago Poiani</a></strong> &copy; 2014

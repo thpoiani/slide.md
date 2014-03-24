@@ -1,0 +1,47 @@
+.presentations
+  @extend %text-align-center
+  font-size: 0
+
+.presentation
+  @extend %position-rel
+  @extend %display-inline-block
+  @extend %margin-10
+  width: 300px
+  height: 300px
+
+  .menu
+    @extend %display-none
+  &:hover
+    .menu
+      @extend %display-block
+
+.menu
+  @extend %position-abs
+  width: 200px
+  left: 50%
+  margin-left: -100px
+  bottom: -15px
+
+  &::before
+    @extend %position-abs
+    @extend %triangulo
+    left: 50%
+    top: -10px
+    margin-left: -10px
+    content: ''
+
+  ul
+    @extend %background-cinza-claro
+    @extend %width-100
+    @include border-radius(3px)
+
+  li
+    @extend %display-inline-block
+    vertical-align: middle
+    &:hover
+      a
+        color: $escuro
+    a
+      &:focus
+        @extend %outline
+        color: $escuro

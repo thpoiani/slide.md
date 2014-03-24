@@ -1,0 +1,19 @@
+@media (max-width: 768px)
+  .presentation
+    .menu
+      display: block
+
+  .menu
+    width: 300px
+    left: 50%
+    margin-left: -150px
+    bottom: 0
+
+    &::before
+      display: none
+
+    ul
+      @include border-radius(0)
+
+    li
+      width: 50px

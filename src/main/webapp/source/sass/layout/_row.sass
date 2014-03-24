@@ -1,0 +1,17 @@
+.row
+  @extend %width-100
+  @extend %position-rel
+  .center
+    @extend %text-align-center
+  .right
+    @extend %text-align-right
+  .content
+    @extend %margin-0-auto
+    @extend %width-content
+    &.header
+      height: 150px
+  .content-medium
+    @extend %margin-0-auto
+    @extend %width-50
+
+@import mobile/row

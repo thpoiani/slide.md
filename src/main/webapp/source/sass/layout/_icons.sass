@@ -1,0 +1,38 @@
+@font-face
+  font-family: ionicons
+  font-style: normal
+  font-weight: normal
+  src: url('../fonts/ionicons.woff') format('woff')
+
+.preview, .share, .edit, .delete
+  @extend %display-inline-block
+  @extend %margin-0-10
+  font-family: 'ionicons'
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  text-rendering: auto
+  line-height: 1
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.preview
+  a::before
+    @extend %font-size-28
+    content: "\f133"
+
+.share
+  a::before
+    @extend %font-size-28
+    content: "\f220"
+
+.edit
+  a::before
+    @extend %font-size-23
+    content: "\f2bf"
+
+.delete
+  a::before
+    @extend %font-size-28
+    content: "\f253"

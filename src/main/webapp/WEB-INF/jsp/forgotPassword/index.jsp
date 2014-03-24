@@ -1,15 +1,20 @@
+<content tag="controller">forgot</content>
+
 <section class="row">
   <div class="content-medium">
-	<h2 class="subtitle">Forgot password</h2>
-  </div>
-	  
-  <div class="content centered center markdown">
-  	<form method="post">
-	  <label for="email">Email: </label>
-	  <input type="text" name="email" id="email" autofocus="autofocus" tabindex="1">
-	  
-	  <input type="submit" title="submit" value="submit" tabindex="2">
-	</form>
+  <h2 class="subtitle">Forgot</h2>
   </div>
 
+  <div class="content centered">
+    <div class="form">
+      <form method="post">
+        <label for="email">Email: </label>
+        <input type="text" name="email" id="email" autofocus tabindex="1">
+
+        <div class="right">
+          <input class="button" type="submit" title="remember" value="remember" tabindex="4">
+        </div>
+      </form>
+    </div>
+  </div>
 </section>
