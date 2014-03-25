@@ -13,7 +13,5 @@
 
 <content tag="scripts">
   <script src="/slidemd/js/ace/ace.js"></script>
-  <script>
-    var editor = ace.edit("editor");
-  </script>
+  <script src="/slidemd/js/live.js"></script>
 </content>
