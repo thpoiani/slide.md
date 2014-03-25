@@ -31,7 +31,7 @@
 
 <link rel="canonical" href="<decorator:getProperty property="page.url" default="" />" />
 
-<link rel="stylesheet" href="css/<decorator:getProperty property="page.controller" default="index" />.css">
+<link rel="stylesheet" href="/slidemd/css/<decorator:getProperty property="page.controller" default="index" />.css">
 
 <script>
 //     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -75,5 +75,8 @@
     <strong><a href="https://github.com/thpoiani" target="_blank" title="Thiago Poiani">Thiago Poiani</a></strong> &copy; 2014
   </p>
 </footer>
+
+<decorator:getProperty property="page.scripts" />
+
 </body>
 </html>

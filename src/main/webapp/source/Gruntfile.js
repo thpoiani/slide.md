@@ -24,6 +24,11 @@ module.exports = function(grunt) {
       production: '../fonts/'
     },
 
+    ace: {
+      development: './bower_components/ace-builds/src-min-noconflict/',
+      production: '../js/ace/'
+    },
+
     normalize: './bower_components/normalize.css/normalize.css'
   }
 
@@ -71,7 +76,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: grunt.constants.js.development,
-            src: ['*.js'],
+            src: ['**/*'],
             dest: grunt.constants.js.production
           }
         ]
@@ -103,6 +108,16 @@ module.exports = function(grunt) {
             cwd: grunt.constants.fonts.development,
             src: ['*'],
             dest: grunt.constants.fonts.production
+          }
+        ]
+      },
+      ace: {
+        files: [
+          {
+            expand: true,
+            cwd: grunt.constants.ace.development,
+            src: ['*'],
+            dest: grunt.constants.ace.production
           }
         ]
       }
