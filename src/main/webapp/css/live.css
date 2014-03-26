@@ -548,7 +548,7 @@ h2 {
 }
 
 /* line 52, ../sass/lib/_placeholder.sass */
-.button {
+.button, .ace_editor, .slide {
   display: inline-block;
 }
 
@@ -692,7 +692,7 @@ footer {
 }
 
 /* line 1, ../sass/view/_live.sass */
-.ace_editor {
-  width: 50%;
+.ace_editor, .slide {
+  width: 49%;
   height: 400px;
 }

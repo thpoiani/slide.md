@@ -1,8 +1,11 @@
 (function(win, doc){
+  'use strict';
 
   var Editor = {
 
     self: null,
+
+    mutex: false,
 
     element : doc.getElementById('editor'),
 
@@ -11,25 +14,88 @@
     highligth: 'ace/mode/markdown',
 
     initialize : function () {
-      self = ace.edit(this.element);
+      Editor.instanceAce();
+      Editor.markdownToSlide();
+      Editor.saveEvent();
+    },
 
-      self.setTheme(this.theme);
+    instanceAce: function() {
+      var editor = ace.edit(this.element);
 
+      editor.setTheme(this.theme);
 
-      self.getSession().setMode(this.highligth);
-      self.getSession().setUseWrapMode(true);
-      self.getSession().setUseSoftTabs(true);
+      editor.getSession().setMode(this.highligth);
+      editor.getSession().setUseWrapMode(true);
+      editor.getSession().setUseSoftTabs(true);
 
+      this.self = editor;
+    },
 
-      self.getSession().on('change', function(e) {
-         Editor.change();
+    markdownToSlide: function() {
+      var editor, slide;
+
+      editor = this.self;
+      slide = doc.getElementById('source');
+
+      this.self.getSession().on('change', function(e) {
+        slide.innerHTML = editor.getValue();
       });
     },
 
-    change: function () {
-      Editor.post(location.href, {data: self.getValue()}, function(response) {
-        console.log(response);
-      });
+    saveEvent: function() {
+      var keyPressed = {
+          ctrl: function(event) {
+            return (navigator.platform.match("Mac") ? event.metaKey : event.ctrlKey);
+          },
+
+          s: function(event) {
+            return event.keyCode == 83;
+          }
+        }
+
+      // CTRL+S
+      doc.addEventListener('keydown', function(event) {
+        if (keyPressed.ctrl(event) && keyPressed.s(event)) {
+          event.preventDefault();
+
+          Editor.postRequest();
+        }
+      }, false);
+
+      // TODO TIME
+    },
+
+    postRequest: function () {
+      var status = doc.getElementById('status');
+
+      function saving() {
+        status.innerText = 'saving';
+      }
+
+      function saved() {
+        status.innerText = 'saved';
+      }
+
+      function error() {
+        status.innerText = 'error';
+      }
+
+      if (!Editor.mutex) {
+        Editor.mutex = true;
+
+        saving();
+        Editor.post(location.href, {data: this.self.getValue()}, function(response) {
+          // TODO resultado
+
+          if (response.success) {
+            saved();
+            Editor.mutex = false;
+          } else {
+            error();
+         }
+        });
+      }
+
     },
 
     post: function(url, data, callback) {
