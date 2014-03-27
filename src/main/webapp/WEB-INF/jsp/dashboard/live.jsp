@@ -8,13 +8,12 @@
 
   <div class="content">
     <div id="editor"></div>
-    <textarea id="source" class="slide"></textarea>
+    <iframe class="slide" src="/slidemd/thpoiani/W87SAs" frameborder="0"></iframe>
   </div>
 
 </section>
 
 <content tag="scripts">
   <script src="/slidemd/js/ace/ace.js"></script>
-  <script src="/slidemd/js/remark/remark.js"></script>
   <script src="/slidemd/js/live.js"></script>
 </content>

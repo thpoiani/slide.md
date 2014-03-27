@@ -30,7 +30,7 @@ public class DashboardController {
 	}
 	
 	@Post("/{username}/{hash}/live")
-	public void livePost(String texto) {
+	public void livePost(String json) {
 		String retorno = "{success:true}";
 
 		result.use(Results.json()).withoutRoot().from(retorno).recursive().serialize();

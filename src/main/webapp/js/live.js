@@ -15,7 +15,7 @@
 
     initialize : function () {
       Editor.instanceAce();
-      Editor.markdownToSlide();
+      // Editor.markdownToSlide();
       Editor.saveEvent();
     },
 
@@ -58,14 +58,17 @@
         if (keyPressed.ctrl(event) && keyPressed.s(event)) {
           event.preventDefault();
 
-          Editor.postRequest();
+          Editor.postRequest(function() {
+            // reload iframe
+            document.getElementsByTagName('iframe')[0].contentDocument.location.reload(true);
+          });
         }
       }, false);
 
       // TODO TIME
     },
 
-    postRequest: function () {
+    postRequest: function (callback) {
       var status = doc.getElementById('status');
 
       function saving() {
@@ -89,6 +92,11 @@
 
           if (response.success) {
             saved();
+
+            if (typeof callback === 'function') {
+              callback();
+            }
+
             Editor.mutex = false;
           } else {
             error();
