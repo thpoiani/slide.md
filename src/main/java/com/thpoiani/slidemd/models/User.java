@@ -2,13 +2,28 @@ package com.thpoiani.slidemd.models;
 
 import java.util.Date;
 import java.util.List;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+
 @javax.persistence.Entity
 public class User extends Entity {
 
+	@NotNull
+	@Size(min=4, max=80)
 	private String name;
+	
+	@NotNull
+	@Email
 	private String email;
+	
+	@NotNull
 	private String password;
+	
 	private boolean active;
+	
 	private Date createdAt;
 	
 	@javax.persistence.OneToMany(mappedBy = "user")

@@ -2,8 +2,13 @@ package com.thpoiani.slidemd.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 import com.thpoiani.slidemd.models.User;
 import com.thpoiani.slidemd.repositories.UserRepository;
+
 import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
@@ -34,7 +39,7 @@ public class UserController {
 	}
 	
 	@Post("/users")
-	public void create(User user) {
+	public void create(@NotEmpty @Valid User user) {
 		validator.validate(user);
 		validator.onErrorUsePageOf(this).newUser();
 		repository.create(user);

@@ -1,0 +1,32 @@
+label
+  @extend %display-block
+
+input
+  &[type="text"], &[type="password"], &[type="date"], &[type="datetime"], &[type="datetime-local"], &[type="month"], &[type="week"], &[type="email"], &[type="number"], &[type="search"], &[type="tel"], &[type="time"], &[type="url"]
+    @extend %width-100
+    @extend %background-branco
+    @extend %border
+    @extend %display-block
+    @extend %color-cinza-escuro
+    @extend %input-transition
+    @extend %shadow
+    -webkit-appearance: none
+    font-family: inherit
+    font-size: 0.875rem
+    margin: 0 0 1rem 0
+    padding: 0.5rem
+    height: 2.3125rem
+    &.error
+      @extend %border-vermelho
+      @extend %shadow-focus-error
+      color: $vermelho
+
+input
+  &[type="text"]:focus, &[type="password"]:focus, &[type="date"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="month"]:focus, &[type="week"]:focus, &[type="email"]:focus, &[type="number"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="time"]:focus, &[type="url"]:focus
+    @extend %shadow-focus
+    @extend %outline
+    @extend %border-escuro
+    background-color: #fafafa
+    &.error
+      @extend %border-vermelho
+      @extend %shadow-focus-error

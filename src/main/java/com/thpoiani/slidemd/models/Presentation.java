@@ -1,16 +1,29 @@
 package com.thpoiani.slidemd.models;
 
 import java.util.Date;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 @javax.persistence.Entity
 public class Presentation extends Entity {
 
+	@NotNull
+	@Size(min=4, max=80)
 	private String title;
+	
+	@NotBlank
 	private String context;
+	
 	private boolean active;
+	
 	private Date createdAt;
 	
+	@NotNull
 	@javax.persistence.ManyToOne()
-	@javax.persistence.JoinColumn(name="userId")
+	@javax.persistence.JoinColumn(name="userId", nullable=false)
 	private User user;
 
 	public void setTitle(String title) {

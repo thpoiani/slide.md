@@ -1,0 +1,28 @@
+.border
+  @extend %border-bottom
+  @extend %border-top
+  margin: 20px 0 40px
+
+blockquote
+  @extend %border-left
+  @extend %text-align-left
+  @extend %color-cinza-escuro
+  padding: 0 15px
+  margin: 15px 0
+
+.markdown
+  height: 300px
+  @extend %position-rel
+  div
+    @extend %width-50
+    @extend %height-100
+    @extend %float-left
+
+.presentations
+  ul
+    height: 300px
+    font-size: 0
+    li
+      @extend %display-inline-block
+      @extend %height-100
+      width: 20%

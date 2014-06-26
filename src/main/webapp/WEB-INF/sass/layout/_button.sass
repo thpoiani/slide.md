@@ -1,0 +1,24 @@
+.button
+  @extend %text-align-center
+  @extend %display-inline-block
+  @extend %uppercase
+  @extend %width-button
+  @extend %height-button
+  @extend %background-cinza-claro
+  @extend %color-branco
+  @extend %border-0
+  @include transition(background-color, 300ms, ease-out)
+  &:focus
+    @extend %outline
+    @extend %shadow-focus
+  &:hover
+    @extend %background-cinza-escuro
+  &.signup
+    @include border-bottom-radius(3px)
+    @extend %background-cinza-escuro
+  &.login
+    @include border-bottom-radius(3px)
+    &:focus
+      @extend %shadow-focus-escura
+
+@import mobile/button
