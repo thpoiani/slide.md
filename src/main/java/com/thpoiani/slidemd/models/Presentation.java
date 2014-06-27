@@ -2,20 +2,20 @@ package com.thpoiani.slidemd.models;
 
 import java.util.Date;
 
+import javax.persistence.PrePersist;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.NotBlank;
+import fm.jiecao.lib.Hashids;
 
 @javax.persistence.Entity
 public class Presentation extends Entity {
 
 	@NotNull
-	@Size(min=4, max=80)
 	private String title;
 	
-	@NotBlank
 	private String context;
+	
+	private String hash;
 	
 	private boolean active;
 	
@@ -25,6 +25,14 @@ public class Presentation extends Entity {
 	@javax.persistence.ManyToOne()
 	@javax.persistence.JoinColumn(name="userId", nullable=false)
 	private User user;
+
+	@PrePersist
+	public void prePersist() throws Exception {
+		Hashids hashids = new Hashids("THIAGO HENRIQUE POIANI");
+		hash = hashids.encrypt(new Date().getTime());
+		active = true;
+		createdAt = new Date();
+	}
 
 	public void setTitle(String title) {
 		this.title = title;
@@ -66,4 +74,12 @@ public class Presentation extends Entity {
 		return user;
 	}
 
+	public String getHash() {
+		return hash;
+	}
+
+	public void setHash(String hash) {
+		this.hash = hash;
+	}
+	
 }

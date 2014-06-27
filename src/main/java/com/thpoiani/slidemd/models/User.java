@@ -3,6 +3,8 @@ package com.thpoiani.slidemd.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.PrePersist;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -10,13 +12,14 @@ import org.hibernate.validator.constraints.Email;
 
 @javax.persistence.Entity
 public class User extends Entity {
-
+	
 	@NotNull
 	@Size(min=4, max=80)
 	private String name;
 	
 	@NotNull
 	@Email
+	@Column(unique = true)
 	private String email;
 	
 	@NotNull
@@ -28,6 +31,13 @@ public class User extends Entity {
 	
 	@javax.persistence.OneToMany(mappedBy = "user")
 	private List<Presentation> presentations;
+	
+	@PrePersist
+	public void prePersist() throws Exception {
+//		password = BCrypt.hashpw(password, BCrypt.gensalt(12));
+		active = true;
+		createdAt = new Date();
+	}
 
 	public void setName(String name) {
 		this.name = name;

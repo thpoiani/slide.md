@@ -1,16 +1,27 @@
 <content tag="controller">live</content>
 
 <section class="row">
-  <div class="content-medium">
-    <h2 class="subtitle" data-id="">Live Preview</h2>
-    <p>Status: <span id="status"></span></p>
-  </div>
+  <form id="form" action="${pageContext.request.contextPath}/presentations" method="post">
 
-  <div class="content">
-    <div id="editor"></div>
-    <iframe class="slide" src="${pageContext.request.contextPath}/dashboard/hash" frameborder="0"></iframe>
-  </div>
+    <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="presentation.id" value="${presentation.id}">
+    <input type="hidden" name="presentation.user.id" value="${presentation.user.id}">
 
+    <div class="row">
+      <a class="button" href="${pageContext.request.contextPath}/dashboard" title="back to dashboard">BACK</a>
+      <button class="button" id="save" type="submit" title="save presentation">SAVE</button>
+    </div>
+
+    <div class="content-medium">
+      <h2 class="subtitle" contenteditable>${presentation.title}</h2>
+    </div>
+
+    <div class="content">
+      <div id="editor">${presentation.context}</div>
+      <iframe id="iframe" class="slide" src="${pageContext.request.contextPath}/dashboard/hash" frameborder="0"></iframe>
+    </div>
+
+  </form>
 </section>
 
 <content tag="scripts">

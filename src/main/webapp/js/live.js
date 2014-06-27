@@ -1,7 +1,10 @@
 (function(w, d, ace, $, undefined){
   'use strict';
 
-  var editor = ace.edit(d.getElementById('editor'));
+  var editor = ace.edit(d.getElementById('editor')),
+      save = d.getElementById('save'),
+      form = d.getElementById('form'),
+      iframe = d.getElementById('iframe');
 
   editor.setTheme('ace/theme/xcode');
 
@@ -21,5 +24,21 @@
     'copylinesdown', 'movelinesdown', 'blockoutdent', 'blockindent',
     'splitline', 'transposeletters', 'touppercase', 'tolowercase'
   ]);
+
+  save.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    $.post(form.getAttribute('action'), {
+      "_method": "put",
+      "presentation.id": form.querySelector('[name="presentation.id"]').value,
+      "presentation.title": d.querySelector('.subtitle').innerText,
+      "presentation.context": editor.getValue(),
+      "presentation.active": true,
+      "presentation.user.id": form.querySelector('[name="presentation.user.id"]').value
+    }, function(response) {
+      iframe.contentDocument.location.reload(true);
+    });
+
+  });
 
 }(window, document, window.ace, window.jQuery));

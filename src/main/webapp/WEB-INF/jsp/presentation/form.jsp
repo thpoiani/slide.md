@@ -24,6 +24,12 @@
 	</div>
 	
 	<div class="field">
+		Hash:<br />
+	
+		<input type="text" name="presentation.hash" value="${presentation.hash}"/>
+	</div>
+	
+	<div class="field">
 		Active:<br />
 	
 		<input type="text" name="presentation.active" value="${presentation.active}"/>

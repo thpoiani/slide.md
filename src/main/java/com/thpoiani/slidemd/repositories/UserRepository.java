@@ -16,7 +16,8 @@ public interface UserRepository {
 	void destroy(User entity);
 	
 	User find(Long id);
+
+	User find(String email, String password);
 	
 	List<User> findAll();
-
 }

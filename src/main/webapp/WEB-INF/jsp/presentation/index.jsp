@@ -8,6 +8,7 @@
 		<tr>
 			<th>Title</th>
 			<th>Context</th>
+			<th>Hash</th>
 			<th>Active</th>
 			<th>Created at</th>
 			<th>User</th>
@@ -20,6 +21,7 @@
 			<tr>
 				<td>${presentation.title}</td>
 				<td>${presentation.context}</td>
+				<td>${presentation.hash}</td>
 				<td>${presentation.active}</td>
 				<td>${presentation.createdAt}</td>
 				<td>${presentation.user}</td>

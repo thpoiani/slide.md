@@ -11,6 +11,10 @@
 		${presentation.context}
 	</p>
 	<p>
+		<b>Hash:</b>
+		${presentation.hash}
+	</p>
+	<p>
 		<b>Active:</b>
 		${presentation.active}
 	</p>
