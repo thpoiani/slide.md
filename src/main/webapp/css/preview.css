@@ -226,14 +226,15 @@ a {
   /* line 10, ../WEB-INF/sass/layout/mobile/_row.sass */
   .row.top {
     height: 200px;
+    margin-bottom: 20px;
   }
-  /* line 12, ../WEB-INF/sass/layout/mobile/_row.sass */
+  /* line 13, ../WEB-INF/sass/layout/mobile/_row.sass */
   .row .content.right {
     text-align: center;
     position: absolute;
     bottom: 0;
   }
-  /* line 16, ../WEB-INF/sass/layout/mobile/_row.sass */
+  /* line 17, ../WEB-INF/sass/layout/mobile/_row.sass */
   .row .content.header {
     position: absolute;
     top: 0;
@@ -277,9 +278,12 @@ a {
 
 /* line 1, ../WEB-INF/sass/layout/_subtitle.sass */
 .subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 0 0 0 40px;
 }
-/* line 6, ../WEB-INF/sass/layout/_subtitle.sass */
+/* line 9, ../WEB-INF/sass/layout/_subtitle.sass */
 .subtitle::before {
   content: "##";
   left: 0;
@@ -292,5 +296,5 @@ footer {
 
 /* line 4, ../WEB-INF/sass/view/_preview.sass */
 textarea {
-  display: none;
+  display: none !important;
 }

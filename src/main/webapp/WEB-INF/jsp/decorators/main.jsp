@@ -53,32 +53,32 @@
 <decorator:head/>
 </head>
 <body>
-<main>
-<header class="row top">
-  <div class="content right">
-    <a class="button signup" href="${pageContext.request.contextPath}/join" title="join">join</a>
-    <a class="button login" href="${pageContext.request.contextPath}/enter" title="enter">enter</a>
-  </div>
+  <main>
+    <header class="row top">
+      <div class="content right">
+        <a class="button signup" href="${pageContext.request.contextPath}/join" title="join">join</a>
+        <a class="button login" href="${pageContext.request.contextPath}/enter" title="enter">enter</a>
+      </div>
 
-  <div class="content header center">
-    <h1 class="logo">
-      <a href="${pageContext.request.contextPath}/" title="slide.md">
-          slide.md
-      </a>
-    </h1>
-  </div>
-</header>
+      <div class="content header center">
+        <h1 class="logo">
+          <a href="${pageContext.request.contextPath}/" title="slide.md">
+              slide.md
+          </a>
+        </h1>
+      </div>
+    </header>
 
-  <decorator:body/>
-</main>
+    <decorator:body/>
+  </main>
 
-<footer>
-  <p>
-    <strong><a href="https://github.com/thpoiani" target="_blank" title="Thiago Poiani">Thiago Poiani</a></strong> &copy; 2014
-  </p>
-</footer>
+  <footer>
+    <p>
+      <strong><a href="https://github.com/thpoiani" target="_blank" title="Thiago Poiani">Thiago Poiani</a></strong> &copy; 2014
+    </p>
+  </footer>
 
-<decorator:getProperty property="page.scripts" />
+  <decorator:getProperty property="page.scripts" />
 
 </body>
 </html>

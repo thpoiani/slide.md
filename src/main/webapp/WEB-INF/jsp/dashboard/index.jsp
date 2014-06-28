@@ -2,7 +2,8 @@
 
 <section class="row">
   <div class="content-medium">
-  <h2 class="subtitle">${user.name}</h2>
+    <h2 class="subtitle">${user.name}</h2>
+      <a href="${pageContext.request.contextPath}/presentation/new" class="button new" title="new presentation">NEW</a>
   </div>
 
   <div class="content">

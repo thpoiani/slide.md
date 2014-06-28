@@ -1,4 +1,33 @@
+.content.header.center
+  height: 120px
+
+header
+  @extend %position-rel
+  height: 150px
+
+.logo
+  font-size: 45px
+
+.content-medium .button
+  margin: 10px 0 20px
+
+.live
+  @extend %text-align-center
+  font-size: 0
+
 .ace_editor, .slide
   @extend %display-inline-block
-  width: 49%
+  width: 50%
   height: 400px
+  max-width: 524px
+
+.ace_editor
+  @extend %text-align-left
+
+.back
+  float: right
+
+.save
+  @extend %background-cinza-escuro
+  font-size: 16px
+  padding-bottom: 4px

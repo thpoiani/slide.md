@@ -28,17 +28,40 @@
   save.addEventListener('click', function(e) {
     e.preventDefault();
 
-    $.post(form.getAttribute('action'), {
-      "_method": "put",
-      "presentation.id": form.querySelector('[name="presentation.id"]').value,
-      "presentation.hash": form.querySelector('[name="presentation.hash"]').value,
-      "presentation.title": d.querySelector('.subtitle').innerText,
-      "presentation.context": editor.getValue(),
-      "presentation.active": true,
-      "presentation.createdAt": form.querySelector('[name="presentation.createdAt"]').value,
-      "presentation.user.id": form.querySelector('[name="presentation.user.id"]').value
-    }, function(response) {
-      iframe.contentDocument.location.reload(true);
+    var self = this,
+        method = form.querySelector('[name="_method"]'),
+        id = form.querySelector('[name="presentation.id"]'),
+        data = {
+          "presentation.hash": form.querySelector('[name="presentation.hash"]').value,
+          "presentation.title": d.querySelector('.subtitle').innerText,
+          "presentation.context": editor.getValue(),
+          "presentation.active": true,
+          "presentation.user.id": form.querySelector('[name="presentation.user.id"]').value
+        };
+
+    if (method) data['_method'] = method.value;
+    if (id) data['presentation.id'] = id.value;
+
+    $.post(form.getAttribute('action'), data, function(response) {
+      if (response.list) {
+        var string = '';
+        $.each(response.list, function(i, error){
+          string += error.category + ' ' + error.message + '\n';
+        });
+        return alert(string);
+      }
+
+      if (iframe.getAttribute('src')) {
+        iframe.contentDocument.location.reload(true);
+      } else {
+        var hash = response.presentation.hash;
+
+        self.setAttribute('title', 'save presentation');
+        self.innerText = 'SAVE';
+
+        window.history.pushState(null, null, "/slide.md/presentation/" + hash + "/live");
+        iframe.src = '/slide.md/presentation/' + hash;
+      }
     });
 
   });

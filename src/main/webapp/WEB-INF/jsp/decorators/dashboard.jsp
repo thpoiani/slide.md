@@ -53,10 +53,32 @@
 <decorator:head/>
 </head>
 <body>
+  <main>
+    <header class="row top">
+      <div class="content right">
+        <a class="button signup" href="${pageContext.request.contextPath}/profile" title="profile">profile</a>
+        <a class="button login" href="${pageContext.request.contextPath}/exit" title="exit">exit</a>
+      </div>
 
-<decorator:body/>
+      <div class="content header center">
+        <h1 class="logo">
+          <a href="${pageContext.request.contextPath}/" title="slide.md">
+              slide.md
+          </a>
+        </h1>
+      </div>
+    </header>
 
-<decorator:getProperty property="page.scripts" />
+    <decorator:body/>
+  </main>
+
+  <footer>
+    <p>
+      <strong><a href="https://github.com/thpoiani" target="_blank" title="Thiago Poiani">Thiago Poiani</a></strong> &copy; 2014
+    </p>
+  </footer>
+
+  <decorator:getProperty property="page.scripts" />
 
 </body>
 </html>

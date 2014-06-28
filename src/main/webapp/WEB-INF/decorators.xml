@@ -5,8 +5,16 @@
         <pattern>/*</pattern>
     </decorator>
 
-    <decorator name="main" page="main.jsp">
+    <decorator name="dashboard" page="dashboard.jsp">
+        <pattern>/dashboard</pattern>
+    </decorator>
+
+    <decorator name="dashboard" page="dashboard.jsp">
         <pattern>/presentation/*/live</pattern>
+    </decorator>
+
+    <decorator name="dashboard" page="dashboard.jsp">
+        <pattern>/presentation/new</pattern>
     </decorator>
 
     <decorator name="presentation" page="presentation.jsp">

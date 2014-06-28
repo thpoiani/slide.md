@@ -144,7 +144,7 @@ h2 {
 }
 
 /* line 32, ../WEB-INF/sass/lib/_placeholder.sass */
-.logo, .subtitle, .delete form, .presentation {
+.logo, .subtitle, .delete form, header, .presentation {
   position: relative;
 }
 
@@ -204,7 +204,7 @@ a {
 }
 
 /* line 85, ../WEB-INF/sass/lib/_placeholder.sass */
-.button:hover, .button.signup {
+.button:hover, .button.signup, .new {
   background-color: #777777;
 }
 
@@ -258,14 +258,15 @@ a {
   /* line 10, ../WEB-INF/sass/layout/mobile/_row.sass */
   .row.top {
     height: 200px;
+    margin-bottom: 20px;
   }
-  /* line 12, ../WEB-INF/sass/layout/mobile/_row.sass */
+  /* line 13, ../WEB-INF/sass/layout/mobile/_row.sass */
   .row .content.right {
     text-align: center;
     position: absolute;
     bottom: 0;
   }
-  /* line 16, ../WEB-INF/sass/layout/mobile/_row.sass */
+  /* line 17, ../WEB-INF/sass/layout/mobile/_row.sass */
   .row .content.header {
     position: absolute;
     top: 0;
@@ -309,9 +310,12 @@ a {
 
 /* line 1, ../WEB-INF/sass/layout/_subtitle.sass */
 .subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 0 0 0 40px;
 }
-/* line 6, ../WEB-INF/sass/layout/_subtitle.sass */
+/* line 9, ../WEB-INF/sass/layout/_subtitle.sass */
 .subtitle::before {
   content: "##";
   left: 0;
@@ -383,31 +387,51 @@ footer {
 }
 
 /* line 1, ../WEB-INF/sass/view/_dashboard.sass */
+.content.header.center {
+  height: 120px;
+}
+
+/* line 4, ../WEB-INF/sass/view/_dashboard.sass */
+header {
+  height: 150px;
+}
+
+/* line 8, ../WEB-INF/sass/view/_dashboard.sass */
+.logo {
+  font-size: 45px;
+}
+
+/* line 11, ../WEB-INF/sass/view/_dashboard.sass */
+.content-medium .button {
+  margin: 10px 0 20px;
+}
+
+/* line 14, ../WEB-INF/sass/view/_dashboard.sass */
 .presentations {
   font-size: 0;
 }
 
-/* line 5, ../WEB-INF/sass/view/_dashboard.sass */
+/* line 18, ../WEB-INF/sass/view/_dashboard.sass */
 .presentation {
   width: 300px;
   height: 300px;
 }
 
-/* line 18, ../WEB-INF/sass/view/_dashboard.sass */
+/* line 31, ../WEB-INF/sass/view/_dashboard.sass */
 .menu {
   width: 200px;
   left: 50%;
   margin-left: -100px;
   bottom: -15px;
 }
-/* line 25, ../WEB-INF/sass/view/_dashboard.sass */
+/* line 38, ../WEB-INF/sass/view/_dashboard.sass */
 .menu::before {
   left: 50%;
   top: -10px;
   margin-left: -10px;
   content: "";
 }
-/* line 33, ../WEB-INF/sass/view/_dashboard.sass */
+/* line 46, ../WEB-INF/sass/view/_dashboard.sass */
 .menu ul {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -415,20 +439,20 @@ footer {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 38, ../WEB-INF/sass/view/_dashboard.sass */
+/* line 51, ../WEB-INF/sass/view/_dashboard.sass */
 .menu li {
   vertical-align: middle;
 }
-/* line 42, ../WEB-INF/sass/view/_dashboard.sass */
+/* line 55, ../WEB-INF/sass/view/_dashboard.sass */
 .menu li:hover a {
   color: black;
 }
-/* line 45, ../WEB-INF/sass/view/_dashboard.sass */
+/* line 58, ../WEB-INF/sass/view/_dashboard.sass */
 .menu li a:focus {
   color: black;
 }
 
-/* line 49, ../WEB-INF/sass/view/_dashboard.sass */
+/* line 62, ../WEB-INF/sass/view/_dashboard.sass */
 .slide {
   height: 100%;
 }
@@ -461,5 +485,25 @@ footer {
   /* line 18, ../WEB-INF/sass/view/mobile/_dashboard.sass */
   .menu li {
     width: 50px;
+  }
+  /* line 21, ../WEB-INF/sass/view/mobile/_dashboard.sass */
+  .menu .delete button {
+    left: 16px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 26, ../WEB-INF/sass/view/mobile/_dashboard.sass */
+  header {
+    height: 150px !important;
+  }
+
+  /* line 28, ../WEB-INF/sass/view/mobile/_dashboard.sass */
+  .logo {
+    font-size: 45px;
+  }
+
+  /* line 30, ../WEB-INF/sass/view/mobile/_dashboard.sass */
+  .content-medium .button {
+    width: 100%;
   }
 }
