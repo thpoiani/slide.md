@@ -2,9 +2,6 @@ package com.thpoiani.slidemd.controllers;
 
 import java.util.List;
 
-import com.thpoiani.slidemd.models.Presentation;
-import com.thpoiani.slidemd.repositories.PresentationRepository;
-import com.thpoiani.slidemd.repositories.UserRepository;		
 import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
@@ -13,22 +10,54 @@ import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
 
+import com.thpoiani.slidemd.annotation.WithSession;
+import com.thpoiani.slidemd.component.UserSession;
+import com.thpoiani.slidemd.models.Presentation;
+import com.thpoiani.slidemd.repositories.PresentationRepository;
+import com.thpoiani.slidemd.repositories.UserRepository;
+
 @Resource
 public class PresentationController {
 
 	private final Result result;
 	private final PresentationRepository repository;
-	private final UserRepository userRepository;		
-	
+	private final UserRepository userRepository;
 	private final Validator validator;
+	private UserSession userSession;
 	
 	public PresentationController(Result result, PresentationRepository repository, 
-	UserRepository userRepository,	Validator validator) {
+	UserRepository userRepository,	Validator validator, UserSession userSession) {
 		this.result = result;
 		this.repository = repository;
 		this.userRepository = userRepository;	
 		this.validator = validator;
+		this.userSession = userSession;
 	}
+	
+	@WithSession
+    @Get("/presentation/{hash}/live")
+    public Presentation live(String hash) {
+		// TODO validar sessão
+		// User user = userSession.getUser();
+		Presentation presentation = repository.find(hash);
+		
+		if (presentation == null) {
+			result.permanentlyRedirectTo(ErrorController.class).index();
+		}
+		
+		return presentation;
+    }
+
+    @Get("/presentation/{hash}")
+    public Presentation preview(String hash) {
+		Presentation presentation = repository.find(hash);
+		
+		if (presentation == null) {
+			result.permanentlyRedirectTo(ErrorController.class).index();
+		}
+		
+		return presentation;
+    }
 	
 	@Get("/presentations")
 	public List<Presentation> index() {

@@ -28,11 +28,11 @@ public class UserController {
 	private UserSession userSession;
 
 	public UserController(Result result, UserRepository repository, 
-    UserSession userSession, Validator validator) {
+	Validator validator, UserSession userSession) {
 		this.result = result;
 		this.repository = repository;
-		this.userSession = userSession;
 		this.validator = validator;
+		this.userSession = userSession;
 	}
 	
 	@Get("/users")
@@ -49,14 +49,14 @@ public class UserController {
 			userSession.setUser(session);
 			result.redirectTo(DashboardController.class).index();
 		} else {
-			result.redirectTo(EnterController.class).index();
+			result.include("errors", "auth").redirectTo(EnterController.class).index();
 		}
 	}
 	
 	@Post("/users")
 	public void create(@NotEmpty @Valid User user) {
 		validator.validate(user);
-		validator.onErrorUsePageOf(JoinController.class).index();
+		validator.onErrorRedirectTo(JoinController.class).index();
 		repository.create(user);
 		userSession.setUser(user);
 		result.redirectTo(DashboardController.class).index();

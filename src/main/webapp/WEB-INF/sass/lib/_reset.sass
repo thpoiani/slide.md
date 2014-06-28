@@ -7,9 +7,23 @@
   margin: 0
   padding: 0
 
+html, body
+  height: 100%
+
 body
   @extend %source-sans-pro
+  background: #FEFEFE url('/slide.md/images/lined_paper.png')
   font-size: 18px
+
+main
+  min-height: 100%
+  margin-bottom: -60px
+  &:after
+    content: ""
+    display: block
+
+main::after, footer
+  height: 60px
 
 a
   color: $cinza-escuro

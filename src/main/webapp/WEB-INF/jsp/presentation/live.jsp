@@ -2,9 +2,10 @@
 
 <section class="row">
   <form id="form" action="${pageContext.request.contextPath}/presentations" method="post">
-
     <input type="hidden" name="_method" value="put">
     <input type="hidden" name="presentation.id" value="${presentation.id}">
+    <input type="hidden" name="presentation.hash" value="${presentation.hash}">
+    <input type="hidden" name="presentation.createdAt" value="${presentation.createdAt}">
     <input type="hidden" name="presentation.user.id" value="${presentation.user.id}">
 
     <div class="row">
@@ -18,9 +19,8 @@
 
     <div class="content">
       <div id="editor">${presentation.context}</div>
-      <iframe id="iframe" class="slide" src="${pageContext.request.contextPath}/dashboard/hash" frameborder="0"></iframe>
+      <iframe id="iframe" class="slide" src="${pageContext.request.contextPath}/presentation/${presentation.hash}" frameborder="0"></iframe>
     </div>
-
   </form>
 </section>
 

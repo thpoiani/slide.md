@@ -31,9 +31,11 @@
     $.post(form.getAttribute('action'), {
       "_method": "put",
       "presentation.id": form.querySelector('[name="presentation.id"]').value,
+      "presentation.hash": form.querySelector('[name="presentation.hash"]').value,
       "presentation.title": d.querySelector('.subtitle').innerText,
       "presentation.context": editor.getValue(),
       "presentation.active": true,
+      "presentation.createdAt": form.querySelector('[name="presentation.createdAt"]').value,
       "presentation.user.id": form.querySelector('[name="presentation.user.id"]').value
     }, function(response) {
       iframe.contentDocument.location.reload(true);

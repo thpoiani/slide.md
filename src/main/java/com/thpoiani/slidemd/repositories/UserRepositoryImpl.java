@@ -19,9 +19,10 @@ public class UserRepositoryImpl
 	
 	public User find(String email, String password) {
 		try {
-            Query query = this.entityManager.createQuery("from User where email = :email and password = :password");
+            Query query = this.entityManager.createQuery("from User where email = :email and password = :password and active = :active");
             query.setParameter("email", email);
             query.setParameter("password", password);
+            query.setParameter("active", true);
             return (User) query.getSingleResult();
         } catch (NoResultException e) {
             return null;

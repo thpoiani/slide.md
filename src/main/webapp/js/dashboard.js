@@ -6,17 +6,21 @@ window.fbAsyncInit = function() {
   });
 };
 
-(function(w, d, remark){
+(function(w, d){
   'use strict';
 
-  remark.create();
+  var share = d.querySelector('.share a');
 
-  // FB.ui({
-  //   method: 'share',
-  //   href: location.href,
-  // }, function(response){});
+  share.addEventListener('click', function(e){
+    e.preventDefault();
 
-}(window, document, window.remark));
+    FB.ui({
+      method: 'share',
+      href: location.href,
+    }, function(response){});
+  });
+
+}(window, document));
 
 (function(d, s, id){
    var js, fjs = d.getElementsByTagName(s)[0];

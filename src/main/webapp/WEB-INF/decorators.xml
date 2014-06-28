@@ -4,4 +4,13 @@
     <decorator name="main" page="main.jsp">
         <pattern>/*</pattern>
     </decorator>
+
+    <decorator name="main" page="main.jsp">
+        <pattern>/presentation/*/live</pattern>
+    </decorator>
+
+    <decorator name="presentation" page="presentation.jsp">
+        <pattern>/presentation/*</pattern>
+    </decorator>
 </decorators>
+

@@ -33,6 +33,22 @@
     content: "\f2bf"
 
 .delete
-  a::before
-    @extend %font-size-28
-    content: "\f253"
+  form
+    @extend %position-rel
+    color: #777
+    &:hover
+      color: #000
+    &:before
+      @extend %font-size-28
+      content: "\f253"
+  button
+    @extend %position-abs
+    background: transparent
+    border: 0
+    cursor: pointer
+    height: 22px
+    left: 0
+    outline: none
+    position: absolute
+    top: 2px
+    width: 18px

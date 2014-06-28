@@ -1,6 +1,6 @@
 <content tag="controller">index</content>
 
-<section class="row border">
+<div class="row border">
   <div class="content-medium center">
     <blockquote>
       <p>
@@ -12,7 +12,7 @@
       </p>
     </blockquote>
   </div>
-</section>
+</div>
 
 <section class="row">
   <div class="content-medium">

@@ -24,7 +24,7 @@
 				<td>${presentation.hash}</td>
 				<td>${presentation.active}</td>
 				<td>${presentation.createdAt}</td>
-				<td>${presentation.user}</td>
+				<td>${presentation.user.name}</td>
 				<td><a href="${pageContext.request.contextPath}/presentations/${presentation.id}">show</a></td>
 				<td><a href="${pageContext.request.contextPath}/presentations/${presentation.id}/edit">edit</a></td>
 				<td>

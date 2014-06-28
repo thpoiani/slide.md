@@ -1,9 +1,11 @@
 package com.thpoiani.slidemd.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.PrePersist;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -29,8 +31,8 @@ public class User extends Entity {
 	
 	private Date createdAt;
 	
-	@javax.persistence.OneToMany(mappedBy = "user")
-	private List<Presentation> presentations;
+	@javax.persistence.OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+	private List<Presentation> presentations = new ArrayList<Presentation>();
 	
 	@PrePersist
 	public void prePersist() throws Exception {

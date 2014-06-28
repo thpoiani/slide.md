@@ -34,39 +34,61 @@ body {
 }
 
 /* line 10, ../WEB-INF/sass/lib/_reset.sass */
+html, body {
+  height: 100%;
+}
+
+/* line 13, ../WEB-INF/sass/lib/_reset.sass */
 body {
+  background: #fefefe url("/slide.md/images/lined_paper.png");
   font-size: 18px;
 }
 
-/* line 14, ../WEB-INF/sass/lib/_reset.sass */
+/* line 18, ../WEB-INF/sass/lib/_reset.sass */
+main {
+  min-height: 100%;
+  margin-bottom: -60px;
+}
+/* line 21, ../WEB-INF/sass/lib/_reset.sass */
+main:after {
+  content: "";
+  display: block;
+}
+
+/* line 25, ../WEB-INF/sass/lib/_reset.sass */
+main::after, footer {
+  height: 60px;
+}
+
+/* line 28, ../WEB-INF/sass/lib/_reset.sass */
 a {
   color: #777777;
   text-decoration: none;
 }
 
-/* line 19, ../WEB-INF/sass/lib/_reset.sass */
+/* line 33, ../WEB-INF/sass/lib/_reset.sass */
 h1, h2 {
   margin: 0;
   padding: 0;
 }
 
-/* line 23, ../WEB-INF/sass/lib/_reset.sass */
+/* line 37, ../WEB-INF/sass/lib/_reset.sass */
 h1 {
   font-size: 70px;
 }
 
-/* line 26, ../WEB-INF/sass/lib/_reset.sass */
+/* line 40, ../WEB-INF/sass/lib/_reset.sass */
 h2 {
   font-size: 32px;
 }
 
 @media (max-width: 480px) {
-  /* line 30, ../WEB-INF/sass/lib/_reset.sass */
+  /* line 44, ../WEB-INF/sass/lib/_reset.sass */
   h1 {
     font-size: 60px;
   }
 
-  /* line 32, ../WEB-INF/sass/lib/_reset.sass */
+  /* line 46, ../WEB-INF/sass/lib/_reset.sass */
   h2 {
     font-size: 28px;
   }
@@ -112,7 +134,7 @@ h2 {
 }
 
 /* line 32, ../WEB-INF/sass/lib/_placeholder.sass */
-.row, .logo, .subtitle, .markdown {
+.logo, .subtitle, .markdown {
   position: relative;
 }
 
@@ -210,7 +232,7 @@ blockquote {
   box-shadow: 0 0 5px #dddddd;
 }
 
-/* line 11, ../WEB-INF/sass/layout/_row.sass */
+/* line 10, ../WEB-INF/sass/layout/_row.sass */
 .row .content.header {
   height: 150px;
 }
@@ -250,27 +272,25 @@ blockquote {
 }
 /* line 16, ../WEB-INF/sass/layout/_button.sass */
 .button.signup {
-  -moz-border-radius-bottomleft: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-radius: 0px 0px 3px 3px;
 }
 /* line 19, ../WEB-INF/sass/layout/_button.sass */
 .button.login {
-  -moz-border-radius-bottomleft: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-radius: 0px 0px 3px 3px;
 }
 
 @media (max-width: 480px) {
   /* line 2, ../WEB-INF/sass/layout/mobile/_button.sass */
   .button {
     width: 75%;
+  }
+  /* line 4, ../WEB-INF/sass/layout/mobile/_button.sass */
+  .button.signup {
+    border-radius: 0;
+  }
+  /* line 6, ../WEB-INF/sass/layout/mobile/_button.sass */
+  .button.login {
+    border-radius: 0;
   }
 }
 /* line 5, ../WEB-INF/sass/layout/_logo.sass */
@@ -292,7 +312,7 @@ blockquote {
 
 /* line 1, ../WEB-INF/sass/layout/_footer.sass */
 footer {
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 /* line 1, ../WEB-INF/sass/view/_index.sass */

@@ -34,39 +34,61 @@ body {
 }
 
 /* line 10, ../WEB-INF/sass/lib/_reset.sass */
+html, body {
+  height: 100%;
+}
+
+/* line 13, ../WEB-INF/sass/lib/_reset.sass */
 body {
+  background: #fefefe url("/slide.md/images/lined_paper.png");
   font-size: 18px;
 }
 
-/* line 14, ../WEB-INF/sass/lib/_reset.sass */
+/* line 18, ../WEB-INF/sass/lib/_reset.sass */
+main {
+  min-height: 100%;
+  margin-bottom: -60px;
+}
+/* line 21, ../WEB-INF/sass/lib/_reset.sass */
+main:after {
+  content: "";
+  display: block;
+}
+
+/* line 25, ../WEB-INF/sass/lib/_reset.sass */
+main::after, footer {
+  height: 60px;
+}
+
+/* line 28, ../WEB-INF/sass/lib/_reset.sass */
 a {
   color: #777777;
   text-decoration: none;
 }
 
-/* line 19, ../WEB-INF/sass/lib/_reset.sass */
+/* line 33, ../WEB-INF/sass/lib/_reset.sass */
 h1, h2 {
   margin: 0;
   padding: 0;
 }
 
-/* line 23, ../WEB-INF/sass/lib/_reset.sass */
+/* line 37, ../WEB-INF/sass/lib/_reset.sass */
 h1 {
   font-size: 70px;
 }
 
-/* line 26, ../WEB-INF/sass/lib/_reset.sass */
+/* line 40, ../WEB-INF/sass/lib/_reset.sass */
 h2 {
   font-size: 32px;
 }
 
 @media (max-width: 480px) {
-  /* line 30, ../WEB-INF/sass/lib/_reset.sass */
+  /* line 44, ../WEB-INF/sass/lib/_reset.sass */
   h1 {
     font-size: 60px;
   }
 
-  /* line 32, ../WEB-INF/sass/lib/_reset.sass */
+  /* line 46, ../WEB-INF/sass/lib/_reset.sass */
   h2 {
     font-size: 28px;
   }
@@ -102,7 +124,7 @@ h2 {
 }
 
 /* line 32, ../WEB-INF/sass/lib/_placeholder.sass */
-.row, .logo, .subtitle {
+.logo, .subtitle {
   position: relative;
 }
 
@@ -225,7 +247,7 @@ input[type="text"].error, input[type="password"].error, input[type="date"].error
   box-shadow: 0 0 5px #c60f13;
 }
 
-/* line 11, ../WEB-INF/sass/layout/_row.sass */
+/* line 10, ../WEB-INF/sass/layout/_row.sass */
 .row .content.header {
   height: 150px;
 }
@@ -265,27 +287,25 @@ input[type="text"].error, input[type="password"].error, input[type="date"].error
 }
 /* line 16, ../WEB-INF/sass/layout/_button.sass */
 .button.signup {
-  -moz-border-radius-bottomleft: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-radius: 0px 0px 3px 3px;
 }
 /* line 19, ../WEB-INF/sass/layout/_button.sass */
 .button.login {
-  -moz-border-radius-bottomleft: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-radius: 0px 0px 3px 3px;
 }
 
 @media (max-width: 480px) {
   /* line 2, ../WEB-INF/sass/layout/mobile/_button.sass */
   .button {
     width: 75%;
+  }
+  /* line 4, ../WEB-INF/sass/layout/mobile/_button.sass */
+  .button.signup {
+    border-radius: 0;
+  }
+  /* line 6, ../WEB-INF/sass/layout/mobile/_button.sass */
+  .button.login {
+    border-radius: 0;
   }
 }
 /* line 5, ../WEB-INF/sass/layout/_logo.sass */
@@ -305,7 +325,25 @@ input[type="text"].error, input[type="password"].error, input[type="date"].error
   left: 0;
 }
 
-/* line 5, ../WEB-INF/sass/layout/_form.sass */
+/* line 1, ../WEB-INF/sass/layout/_form.sass */
+.form {
+  width: 300px;
+  margin: 20px auto;
+  background: #fefefe;
+  box-shadow: 0 0 3px -2px black;
+  padding: 5px;
+}
+/* line 8, ../WEB-INF/sass/layout/_form.sass */
+.form form {
+  margin: 0 0 1rem 0;
+}
+/* line 11, ../WEB-INF/sass/layout/_form.sass */
+.form form a {
+  outline: none;
+  float: right;
+}
+
+/* line 22, ../WEB-INF/sass/layout/_form.sass */
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"] {
   -webkit-appearance: none;
   font-family: inherit;
@@ -314,23 +352,26 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   padding: 0.5rem;
   height: 2.3125rem;
 }
-/* line 19, ../WEB-INF/sass/layout/_form.sass */
+/* line 36, ../WEB-INF/sass/layout/_form.sass */
 input[type="text"].error, input[type="password"].error, input[type="date"].error, input[type="datetime"].error, input[type="datetime-local"].error, input[type="month"].error, input[type="week"].error, input[type="email"].error, input[type="number"].error, input[type="search"].error, input[type="tel"].error, input[type="time"].error, input[type="url"].error {
   color: #c60f13;
 }
 
-/* line 25, ../WEB-INF/sass/layout/_form.sass */
+/* line 42, ../WEB-INF/sass/layout/_form.sass */
 input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus {
   background-color: #fafafa;
 }
 
-/* line 1, ../WEB-INF/sass/layout/_footer.sass */
-footer {
-  padding: 10px 0;
+/* line 51, ../WEB-INF/sass/layout/_form.sass */
+.error p {
+  background-color: #f9f2f4;
+  color: #c7254e;
+  font-size: 80%;
+  margin-bottom: 2px;
+  padding: 2px 4px;
 }
 
-/* line 1, ../WEB-INF/sass/view/_enter.sass */
-.form {
-  width: 300px;
-  margin: 20px auto;
+/* line 1, ../WEB-INF/sass/layout/_footer.sass */
+footer {
+  padding: 20px 0;
 }

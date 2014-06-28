@@ -17,6 +17,8 @@ public interface PresentationRepository {
 	
 	Presentation find(Long id);
 	
+	Presentation find(String hash);
+	
 	List<Presentation> findAll();
 
 }

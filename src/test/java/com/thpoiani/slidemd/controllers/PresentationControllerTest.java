@@ -7,6 +7,6 @@ import org.junit.Test;
 public class PresentationControllerTest {
 
 	@Test public void fakeTest() {
-		assertNotNull("put something real.", new PresentationController(null, null, null, null));
+		assertNotNull("put something real.", new PresentationController(null, null, null, null, null));
  	}
 }

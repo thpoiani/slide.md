@@ -1,3 +1,20 @@
+.form
+  width: 300px
+  margin: 20px auto
+  background: #fefefe
+  box-shadow: 0 0 3px -2px black
+  padding: 5px
+
+  form
+    margin: 0 0 1rem 0
+
+    a
+      outline: none
+      float: right
+
+  .button
+    @extend %background-cinza-escuro
+
 label
   @extend %display-block
 
@@ -30,3 +47,10 @@ input
     &.error
       @extend %border-vermelho
       @extend %shadow-focus-error
+
+.error p
+  background-color: #f9f2f4
+  color: #c7254e
+  font-size: 80%
+  margin-bottom: 2px
+  padding: 2px 4px
