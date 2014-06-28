@@ -51,6 +51,9 @@
 <![endif]-->
 
 <decorator:head/>
+
+<decorator:getProperty property="page.styles" />
+
 </head>
 <body>
 

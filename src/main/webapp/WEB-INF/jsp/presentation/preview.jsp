@@ -1,3 +1,10 @@
+<c:if test="${not empty presentation.css}">
+  <content tag="styles">
+    <style>${presentation.css}</style>
+  </content>
+</c:if>
+
+
 
 <textarea id="source">
 

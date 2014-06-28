@@ -17,6 +17,8 @@ public class Presentation extends Entity {
 	
 	private String hash;
 	
+	private String css;
+	
 	private boolean active;
 	
 	private Date createdAt;
@@ -80,6 +82,14 @@ public class Presentation extends Entity {
 
 	public void setHash(String hash) {
 		this.hash = hash;
+	}
+
+	public String getCss() {
+		return css;
+	}
+
+	public void setCss(String css) {
+		this.css = css;
 	}
 	
 }

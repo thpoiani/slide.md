@@ -9,16 +9,19 @@ window.fbAsyncInit = function() {
 (function(w, d){
   'use strict';
 
-  var share = d.querySelector('.share a');
+  var share = d.querySelectorAll('.share a'),
+      facebook = function (e){
+        e.preventDefault();
 
-  share.addEventListener('click', function(e){
-    e.preventDefault();
+        FB.ui({
+          method: 'share',
+          href: location.href,
+        }, function(response){});
+      };
 
-    FB.ui({
-      method: 'share',
-      href: location.href,
-    }, function(response){});
-  });
+  for (var i = share.length - 1; i >= 0; i--) {
+    share[i].addEventListener('click', facebook);
+  };
 
 }(window, document));
 

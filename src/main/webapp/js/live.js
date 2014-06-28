@@ -2,28 +2,35 @@
   'use strict';
 
   var editor = ace.edit(d.getElementById('editor')),
+      css = ace.edit(d.getElementById('css')),
       save = d.getElementById('save'),
       form = d.getElementById('form'),
-      iframe = d.getElementById('iframe');
+      iframe = d.getElementById('iframe'),
+      commands = [
+        'showSettingsMenu', 'goToNextError', 'goToPreviousError',
+        'centerselection', 'gotoline', 'fold', 'unfold', 'toggleFoldWidget',
+        'toggleParentFoldWidget', 'foldall', 'foldOther', 'unfoldall',
+        'findnext', 'findprevious', 'selectOrFindNext', 'selectOrFindPrevious',
+        'find', 'togglerecording', 'replaymacro', 'jumptomatching',
+        'selecttomatching', 'removeline', 'duplicateSelection', 'sortlines',
+        'togglecomment', 'toggleBlockComment', 'modifyNumberUp',
+        'modifyNumberDown', 'replace', 'copylinesup', 'movelinesup',
+        'copylinesdown', 'movelinesdown', 'blockoutdent', 'blockindent',
+        'splitline', 'transposeletters', 'touppercase', 'tolowercase'
+      ];
 
   editor.setTheme('ace/theme/xcode');
-
   editor.getSession().setMode('ace/mode/markdown');
   editor.getSession().setUseWrapMode(true);
   editor.getSession().setUseSoftTabs(true);
+  editor.commands.removeCommands(commands);
 
-  editor.commands.removeCommands([
-    'showSettingsMenu', 'goToNextError', 'goToPreviousError',
-    'centerselection', 'gotoline', 'fold', 'unfold', 'toggleFoldWidget',
-    'toggleParentFoldWidget', 'foldall', 'foldOther', 'unfoldall',
-    'findnext', 'findprevious', 'selectOrFindNext', 'selectOrFindPrevious',
-    'find', 'togglerecording', 'replaymacro', 'jumptomatching',
-    'selecttomatching', 'removeline', 'duplicateSelection', 'sortlines',
-    'togglecomment', 'toggleBlockComment', 'modifyNumberUp',
-    'modifyNumberDown', 'replace', 'copylinesup', 'movelinesup',
-    'copylinesdown', 'movelinesdown', 'blockoutdent', 'blockindent',
-    'splitline', 'transposeletters', 'touppercase', 'tolowercase'
-  ]);
+  css.setTheme('ace/theme/xcode');
+  css.getSession().setMode('ace/mode/css');
+  css.getSession().setUseWrapMode(true);
+  css.getSession().setUseSoftTabs(true);
+  css.setShowPrintMargin(false);
+  css.commands.removeCommands(commands);
 
   save.addEventListener('click', function(e) {
     e.preventDefault();
@@ -35,6 +42,7 @@
           "presentation.hash": form.querySelector('[name="presentation.hash"]').value,
           "presentation.title": d.querySelector('.subtitle').innerText,
           "presentation.context": editor.getValue(),
+          "presentation.css": css.getValue(),
           "presentation.active": true,
           "presentation.user.id": form.querySelector('[name="presentation.user.id"]').value
         };

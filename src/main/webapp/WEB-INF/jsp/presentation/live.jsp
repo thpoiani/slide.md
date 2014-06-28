@@ -14,8 +14,9 @@
     </div>
 
     <div class="content live">
-      <div id="editor">${presentation.context}</div>
+      <div id="editor" class="markdown">${presentation.context}</div>
       <iframe id="iframe" class="slide" src="${pageContext.request.contextPath}/presentation/${presentation.hash}" frameborder="0"></iframe>
+      <div id="css" class="css">${presentation.css}</textarea>
     </div>
   </form>
 </section>

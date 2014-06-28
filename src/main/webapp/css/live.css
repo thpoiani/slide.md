@@ -134,7 +134,7 @@ h2 {
 }
 
 /* line 39, ../WEB-INF/sass/lib/_placeholder.sass */
-.ace_editor {
+.markdown, .css {
   text-align: left;
 }
 
@@ -149,7 +149,7 @@ h2 {
 }
 
 /* line 52, ../WEB-INF/sass/lib/_placeholder.sass */
-.button, .ace_editor, .slide {
+.button, .markdown, .slide {
   display: inline-block;
 }
 
@@ -320,18 +320,24 @@ header {
 }
 
 /* line 18, ../WEB-INF/sass/view/_live.sass */
-.ace_editor, .slide {
+.markdown, .slide {
   width: 50%;
   height: 400px;
   max-width: 524px;
 }
 
 /* line 27, ../WEB-INF/sass/view/_live.sass */
+.css {
+  width: 100%;
+  height: 200px;
+}
+
+/* line 32, ../WEB-INF/sass/view/_live.sass */
 .back {
   float: right;
 }
 
-/* line 30, ../WEB-INF/sass/view/_live.sass */
+/* line 35, ../WEB-INF/sass/view/_live.sass */
 .save {
   font-size: 16px;
   padding-bottom: 4px;
