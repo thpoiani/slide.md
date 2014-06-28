@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><decorator:title default="slide.md - a HTML5 presentation builder"/></title>
 
-<meta name="description" content="<decorator:getProperty property="page.description" default="" />" />
+<meta name="description" content="<decorator:getProperty property="page.description" default="slide.md - a HTML5 presentation builder" />" />
 <meta name="keywords" content="<decorator:getProperty property="page.keywords" default="" />" />
 <meta name="author" content="<decorator:getProperty property="page.author" default="Thiago Poiani - thpoiani@gmail.com" />" />
 <meta name="robots" content="<decorator:getProperty property="page.robots" default="index, follow" />" />

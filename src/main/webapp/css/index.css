@@ -329,18 +329,22 @@ blockquote {
   padding: 0 15px;
   margin: 15px 0;
 }
-
 /* line 13, ../WEB-INF/sass/view/_index.sass */
+blockquote .spacing {
+  padding-left: 10px;
+}
+
+/* line 16, ../WEB-INF/sass/view/_index.sass */
 .markdown {
   height: 300px;
 }
 
-/* line 22, ../WEB-INF/sass/view/_index.sass */
+/* line 25, ../WEB-INF/sass/view/_index.sass */
 .presentations ul {
   height: 300px;
   font-size: 0;
 }
-/* line 25, ../WEB-INF/sass/view/_index.sass */
+/* line 28, ../WEB-INF/sass/view/_index.sass */
 .presentations ul li {
   width: 20%;
 }

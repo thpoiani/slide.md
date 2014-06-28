@@ -7,11 +7,7 @@
 
 
 <textarea id="source">
-
-class: center, middle
-
-${presentation.context}
-
+  <c:out value="${presentation.context}" />
 </textarea>
 
 <content tag="scripts">

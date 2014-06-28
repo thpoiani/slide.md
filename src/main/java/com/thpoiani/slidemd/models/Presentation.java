@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.PrePersist;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
+
 import fm.jiecao.lib.Hashids;
 
 @javax.persistence.Entity
@@ -13,10 +15,12 @@ public class Presentation extends Entity {
 	@NotNull
 	private String title;
 	
+	@Type(type="text")
 	private String context;
 	
 	private String hash;
 	
+	@Type(type="text")
 	private String css;
 	
 	private boolean active;
